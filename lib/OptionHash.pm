@@ -25,13 +25,9 @@ you've passed in bad keys.
 
 Currently.. That's it! Simple but effective.
 
-=head1 FUTURE
-
-Maybe do the checking part with XS, although honestly it's fast in perl. Might
-do an extra module as it's nice to have a pure perl version anyway.
+=head1 EXPORTED SUBS
 
 =cut
-
 
 use 5.0.4;
 use strict;
@@ -43,12 +39,31 @@ our $VERSION = '0.0.1';
 
 my $ohash_def = bless {keys => {'keys' => 1}}, __PACKAGE__;
 
+
+=head2 ohash_define
+
+Define an optionhash specification, sort-of a type:
+
+ my $cat_def = ohash_define( keys => [ qw< teeth claws > ]);
+
+=cut
 sub ohash_define{
     my %x = @_;
     ohash_check($ohash_def, \%x);
     my %def = ( keys => { map{ $_ => 1} @{$x{keys}}} );
     return bless \%def, __PACKAGE__;
 }
+
+=head2 ohash_check
+
+Check a hash against a definition:
+
+  ohash_check( $cat_def, \%options);
+
+If everything is okay things will proceed, otherwise ohash_check will croak
+(see Carp).
+
+=cut
 
 sub ohash_check($%){
     my($oh, $h) = @_;
@@ -61,5 +76,14 @@ sub ohash_check($%){
         }
     }
 }
+
+=head1 FUTURE
+
+Maybe do the checking part with XS, although honestly it's fast in perl. Might
+do an extra module as it's nice to have a pure perl version anyway.
+
+Also other checks, like mandatory keys.
+
+=cut
 
 ;1
