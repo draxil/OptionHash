@@ -35,7 +35,7 @@ use warnings;
 use Carp;
 use base qw< Exporter >;
 our @EXPORT = (qw< ohash_check ohash_define >);
-our $VERSION = '0.0.2';
+our $VERSION = '0.2.0';
 
 my $ohash_def = bless {keys => {'keys' => 1}}, __PACKAGE__;
 
