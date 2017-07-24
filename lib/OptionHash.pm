@@ -3,18 +3,18 @@ package OptionHash;
 
 =head1 SYNOPSIS
 
-use OptionHash;
+  use OptionHash;
 
-my $cat_def = ohash_define( keys => [qw< tail nose claws teeth>]);
+  my $cat_def = ohash_define( keys => [qw< tail nose claws teeth>]);
 
-sub cat{
-  my %options = @_;
-  ohash_check( $cat_def, \%options);
-  # ...
-}
+  sub cat{
+    my %options = @_;
+    ohash_check( $cat_def, \%options);
+    # ...
+  }
 
-cat( teeth => 'sharp' );
-cat( trunk => 'long'); # Boom, will fail. Cats dont expect to have a trunk.
+  cat( teeth => 'sharp' );
+  cat( trunk => 'long'); # Boom, will fail. Cats dont expect to have a trunk.
 
 =head1 DESCRIPTION
 
@@ -35,7 +35,7 @@ use warnings;
 use Carp;
 use base qw< Exporter >;
 our @EXPORT = (qw< ohash_check ohash_define >);
-our $VERSION = '0.0.1';
+our $VERSION = '0.0.2';
 
 my $ohash_def = bless {keys => {'keys' => 1}}, __PACKAGE__;
 
