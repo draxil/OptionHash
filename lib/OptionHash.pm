@@ -77,12 +77,27 @@ sub ohash_check($%){
     }
 }
 
+=head1 NOTES
+
+Generally the way to use this is to create the definition "types" at compile
+time in the package definition & then check against them later :
+
+ package foo;
+ use OptionHash;
+ my $DOG_DEF = ohash_define( keys => [ qw< nose > ]);
+ sub build_a_dog{
+     my( %opts ) = @_;
+     ohash_check($DOG_DEF, \%opts);
+ }
+ 1;
+
 =head1 FUTURE
 
 Maybe do the checking part with XS, although honestly it's fast in perl. Might
 do an extra module as it's nice to have a pure perl version anyway.
 
-Also other checks, like mandatory keys.
+Also other checks, like mandatory keys and indeed the option to vet the
+values, and things like making more effort to make the definitions immutable.
 
 =cut
 
