@@ -99,6 +99,17 @@ do an extra module as it's nice to have a pure perl version anyway.
 Also other checks, like mandatory keys and indeed the option to vet the
 values, and things like making more effort to make the definitions immutable.
 
+=head1 WHY NOT USE...
+
+=head2 Params::ValidationCompiler
+
+I didn't discover "Params::ValidationCompiler" until after I had created this,
+and it's a similar idea to OptionHash. However it's much wider in score and
+has a more complicated interface. In short if you need the further validation
+capabilities that Params::ValidationCompiler provides, then that's a better
+fit for you, but OptionHash does what it does simply and (I think) with a bit
+less cognitive load.
+
 =cut
 
 ;1
