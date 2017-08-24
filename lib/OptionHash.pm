@@ -103,12 +103,12 @@ values, and things like making more effort to make the definitions immutable.
 
 =head2 Params::ValidationCompiler
 
-I didn't discover "Params::ValidationCompiler" until after I had created this,
-and it's a similar idea to OptionHash. However it's much wider in score and
-has a more complicated interface. In short if you need the further validation
-capabilities that Params::ValidationCompiler provides, then that's a better
-fit for you, but OptionHash does what it does simply and (I think) with a bit
-less cognitive load.
+Params::ValidationCompiler can also validate a hash of options, and a lot more
+besides, so it's well worth a look. There's a lot more going on than in
+OptionHash which (I'd say) is a bit more focused (thus far anyway) so it's a
+balance between features and complexity. Had I found
+Params::ValidationCompiler before I wrote this I probably wouldn't have
+bothered to re-invent the wheel, but as I already have I'm glad I did!
 
 =cut
 
