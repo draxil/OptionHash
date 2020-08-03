@@ -3,7 +3,7 @@ Options hash checking for perl:
   
   ```use OptionHash;
 
-  my $cat_def = ohash_define( keys => [qw< tail nose claws teeth>]);
+  my $cat_def = ohash_define( keys => [qw< tail nose claws teeth >]);
 
   sub cat{
     my %options = @_;
