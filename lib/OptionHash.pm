@@ -91,14 +91,6 @@ time in the package definition & then check against them later :
  }
  1;
 
-=head1 FUTURE
-
-Maybe do the checking part with XS, although honestly it's fast in perl. Might
-do an extra module as it's nice to have a pure perl version anyway.
-
-Also other checks, like mandatory keys and indeed the option to vet the
-values, and things like making more effort to make the definitions immutable.
-
 =head1 WHY NOT USE...
 
 =head2 Params::ValidationCompiler
